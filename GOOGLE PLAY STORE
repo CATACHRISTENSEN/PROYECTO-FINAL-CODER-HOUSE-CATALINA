@@ -1,0 +1,40 @@
+CREATE TABLE APPS (
+app_id VARCHAR(45) PRIMARY KEY, 
+app_name VARCHAR(45), 
+category VARCHAR(45),
+size DECIMAL, 
+os_version DECIMAL, 
+developer_id VARCHAR(45),
+released DATE,
+last_updated DATE,
+content_rating VARCHAR(20)
+purchase VARCHAR(45),
+FOREIGN KEY (os_version) REFERENCES version (os_version)
+);
+
+CREATE TABLE RATING (
+app_id VARCHAR(45) PRIMARY KEY, 
+rating INT, 
+rating_count INT
+installs DECIMAL, 
+minimum_installs INT, 
+maximum_installs INT,
+);
+
+CREATE TABLE PRICING (
+app_id VARCHAR(45) PRIMARY KEY,
+free VARCHAR (20), 
+price DECIMAL 
+); 
+
+CREATE TABLE DEVELOPER (
+developer_id VARCHAR (45) PRIMARY KEY, 
+developer_website VARCHAR (45),
+developer_email VARCHAR(45),
+developer_country VARCHAR(45)
+);
+
+CREATE TABLE DEVICES (
+os_version DECIMAL PRIMARY KEY,
+avg_price_eur INT 
+); 
